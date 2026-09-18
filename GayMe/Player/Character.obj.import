@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Character.obj-ccf8bbb65744dccc425017ef56293a51.mesh"
+
+[deps]
+
+files=[ "res://.import/Character.obj-ccf8bbb65744dccc425017ef56293a51.mesh" ]
+
+source_file="res://GayMe/Player/Character.obj"
+dest_files=[ "res://.import/Character.obj-ccf8bbb65744dccc425017ef56293a51.mesh", "res://.import/Character.obj-ccf8bbb65744dccc425017ef56293a51.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

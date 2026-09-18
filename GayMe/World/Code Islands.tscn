@@ -1,0 +1,366 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://GayMe/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GayMe/World/Thorns.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://GayMe/World/SpikeTrap.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+metallic_specular = 0.0
+metallic_texture_channel = 4
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.204869, 0.204481, 0.204122 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.203233, 0.202713, 0.202548 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 0.204905, 0.203902, 0.200853 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 0.205327, 0.205221, 0.204472 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.203669, 0.204873, 0.204794 )
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.204931, 0.207119, 0.204023 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 0.204691, 0.211631, 0.205134 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1, 0.72823, 1 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.204691, 0.206849, 0.202615 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 0.205473, 0.205298, 0.205186 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 0.205657, 0.208178, 0.205434 )
+
+[sub_resource type="BoxShape" id=15]
+extents = Vector3( 0.20476, 0.208323, 0.205251 )
+
+[sub_resource type="SpatialMaterial" id=19]
+flags_transparent = true
+vertex_color_is_srgb = true
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 0.205058, 0.205055, 0.204979 )
+
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 0.205342, 0.205595, 0.204864 )
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 0.206774, 0.208461, 0.202279 )
+
+[node name="Code Islands" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.246659, 0 )
+
+[node name="Ground" type="CSGBox" parent="."]
+transform = Transform( 2.19603, 0, 0, 0, 0.102344, 0, 0, 0, 3.71148, 0.132828, 0.564701, 0.0248973 )
+snap = 0.0001
+width = 11.9771
+height = 4.6539
+depth = 6.53223
+material = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Ground"]
+transform = Transform( 29, 0, 0, 0, 11.393, 0, 0, 0, 16, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00202315, -0.00235033, -0.000382384 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground/StaticBody"]
+
+[node name="Huinya1" type="CSGBox" parent="."]
+transform = Transform( 2.19603, 0, 0, 0, 0.102344, 0, 0, 0, 3.71148, -5.50492, 0.880195, -0.555009 )
+width = 0.984296
+height = 4.13236
+depth = 0.51627
+
+[node name="CSGBox" type="CSGBox" parent="Huinya1"]
+width = 0.745092
+height = 14.3648
+depth = 0.368409
+
+[node name="StaticBody" type="StaticBody" parent="Huinya1/CSGBox"]
+transform = Transform( 1.8078, 0, 0, 0, 13.3085, 0, 0, 0, 0.906945, 0, 4.44843, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya1/CSGBox/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Huinya1/CSGBox/StaticBody"]
+skeleton = NodePath("../CollisionShape")
+
+[node name="StaticBody" type="StaticBody" parent="Huinya1"]
+transform = Transform( 2.39334, 0, 0, 0, 7.0168, 0, 0, 0, 1.26499, 0, 0.616796, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya1/StaticBody"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Huinya1/StaticBody"]
+
+[node name="Huinya2" type="CSGBox" parent="."]
+transform = Transform( 2.19603, 0, 0, 0, 0.102344, 0, 0, 0, 3.71148, 5.84746, 0.880195, 3.58067 )
+width = 0.890523
+depth = 0.597055
+
+[node name="CSGBox" type="CSGBox" parent="Huinya2"]
+width = 0.559682
+height = 6.93744
+depth = 0.436664
+
+[node name="StaticBody" type="StaticBody" parent="Huinya2/CSGBox"]
+transform = Transform( 1.36455, 0, 0, 0, 6.00508, 0, 0, 0, 1.06746, 0, 2.2274, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya2/CSGBox/StaticBody"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Huinya2/CSGBox/StaticBody"]
+
+[node name="StaticBody" type="StaticBody" parent="Huinya2"]
+transform = Transform( 2.18344, 0, 0, 0, 4.81847, 0, 0, 0, 1.4524, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya2/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Huinya2/StaticBody"]
+
+[node name="Huinya3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50631, 0.806098, 5.71094 )
+height = 0.167679
+material = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="Huinya3"]
+width = 1.52171
+height = 0.801861
+depth = 1.28564
+
+[node name="StaticBody" type="StaticBody" parent="Huinya3/CSGBox"]
+transform = Transform( 3.71457, 0, 0, 0, 0.775073, 0, 0, 0, 3.14247, 0, 0.241029, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya3/CSGBox/StaticBody"]
+shape = SubResource( 11 )
+
+[node name="StaticBody" type="StaticBody" parent="Huinya3"]
+transform = Transform( 4.88898, 0, 0, 0, 0.407239, 0, 0, 0, 4.87086, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya3/StaticBody"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Huinya3/StaticBody"]
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29969, 6.83063, 0.228408 )
+light_color = Color( 0.780392, 0.890196, 0.929412, 1 )
+light_energy = 0.407
+light_indirect_energy = 4.501
+light_size = 0.025
+light_specular = 0.0
+light_bake_mode = 2
+shadow_enabled = true
+shadow_color = Color( 0.231373, 0.121569, 0.466667, 1 )
+shadow_bias = 5.829
+omni_range = 14.2696
+omni_attenuation = 0.965938
+
+[node name="Tree" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71474, 1.69929, -4.92479 )
+width = 0.547577
+depth = 0.624132
+
+[node name="CSGBox" type="CSGBox" parent="Tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.762331, 0 )
+height = 0.407727
+
+[node name="CSGBox" type="CSGBox" parent="Tree/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0124037, 0.714991, 0.0050106 )
+width = 1.50395
+height = 1.12846
+depth = 1.46952
+
+[node name="StaticBody" type="StaticBody" parent="Tree/CSGBox"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Tree/CSGBox/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.530401, 0 )
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Tree/CSGBox/StaticBody"]
+
+[node name="StaticBody" type="StaticBody" parent="Tree"]
+transform = Transform( 1.33373, 0, 0, 0, 4.74199, 0, 0, 0, 1.52831, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Tree/StaticBody"]
+transform = Transform( 1.00107, 0, 0, 0, 1.00107, 0, 0, 0, 1.00107, 0, 0, 0 )
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Tree/StaticBody"]
+
+[node name="Huinya4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83916, 0.918712, 3.99245 )
+width = 2.91136
+height = 0.296171
+depth = 2.87316
+
+[node name="CSGBox" type="CSGBox" parent="Huinya4"]
+width = 2.5184
+height = 0.965373
+depth = 2.26224
+
+[node name="CSGBox" type="CSGBox" parent="Huinya4/CSGBox"]
+width = 1.64385
+height = 1.68979
+depth = 1.64827
+
+[node name="StaticBody" type="StaticBody" parent="Huinya4/CSGBox/CSGBox"]
+transform = Transform( 4.01083, 0, 0, 0, 1, 0, 0, 0, 4.02895, 0, 0.639977, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya4/CSGBox/CSGBox/StaticBody"]
+shape = SubResource( 13 )
+
+[node name="StaticBody" type="StaticBody" parent="Huinya4/CSGBox"]
+transform = Transform( 6.14255, 0, 0, 0, 0.832429, 0, 0, 0, 5.51417, 0, 0.308131, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya4/CSGBox/StaticBody"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Huinya4/CSGBox/StaticBody"]
+
+[node name="StaticBody" type="StaticBody" parent="Huinya4"]
+transform = Transform( 7.10303, 0, 0, 0, 0.716142, 0, 0, 0, 7.02563, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Huinya4/StaticBody"]
+shape = SubResource( 15 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Huinya4/StaticBody"]
+
+[node name="CSGBox7" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.87999, 0, 0, 0, 1, 0, -1.47311, 0 )
+width = 21.4612
+depth = 17.6587
+material = SubResource( 19 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7"]
+transform = Transform( 0.999999, 0.00229885, -0.000869233, -0.000650915, 0.999999, -0.00056292, 0.000867947, 0.00199155, 0.999999, 0, -1.83499, 0 )
+width = 16.6602
+height = 1.84477
+depth = 14.6584
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox"]
+transform = Transform( 0.999999, -2.08615e-09, -1.16415e-10, -2.76088e-10, 0.999999, 4.07454e-10, 6.40284e-10, 3.25963e-09, 0.999999, 2.71417, -0.815769, -0.922026 )
+width = 5.96227
+height = 1.36665
+depth = 8.2226
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox"]
+transform = Transform( 0.999999, 1.28466e-11, 5.82077e-11, -6.25107e-10, 1, -2.32831e-10, 9.31323e-10, 2.32831e-09, 0.999999, -6.25834, -0.0366824, 3.23544 )
+width = 3.45517
+height = 0.806578
+depth = 3.86647
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox"]
+transform = Transform( 1, -1.1654e-09, -1.15251e-08, -9.97602e-11, 0.531918, 1.74623e-09, 9.8953e-10, 1.28057e-09, 1, -0.168412, -0.388996, 0.533516 )
+width = 1.56627
+height = 3.88425
+depth = 1.6557
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox/CSGBox"]
+transform = Transform( 1, 9.77707e-12, 0, 9.72022e-12, 1, 2.32831e-10, 2.32831e-10, 0, 1, -0.12529, -2.04056, 0.368967 )
+width = 0.621156
+depth = 0.551656
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox"]
+transform = Transform( 0.999999, 1.27329e-11, 5.82077e-11, -5.66899e-10, 1, -1.74623e-10, 8.14907e-10, 2.09548e-09, 0.999999, -0.117304, 0.211043, -1.05595 )
+width = 4.13596
+height = 2.90706
+depth = 3.87545
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox2"]
+transform = Transform( 1, 1.38698e-11, 0, -2.17369e-10, 1, -1.16415e-10, 2.32831e-10, 0, 1, 0.00302243, -1.31372, 0.00261354 )
+width = 1.40651
+height = 0.707945
+depth = 1.45872
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox2/CSGBox"]
+transform = Transform( 1, 1.36424e-11, 0, 1.56888e-11, 1, -1.74623e-10, 2.32831e-10, 0, 1, 0.00114346, -0.497186, 0.000989437 )
+width = 0.935757
+height = 1.276
+depth = 0.840579
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox2"]
+transform = Transform( 1, -2.44773e-09, -1.10012e-08, 2.47894e-10, 0.531918, 2.09548e-09, 1.16415e-09, -3.49246e-10, 1, 4.31154, 2.37306, -0.418463 )
+width = 0.701612
+height = 0.742233
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox2/CSGBox2"]
+transform = Transform( 1, -9.23876e-10, -8.14907e-10, 6.59384e-12, 1, 3.49246e-10, -4.65661e-10, 0, 1, 0.00355911, 1.19921, 5.78153 )
+width = 0.325328
+height = 0.427355
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox2/CSGBox2/CSGBox"]
+transform = Transform( 1, -1.15585e-09, -1.10595e-09, 6.19593e-12, 1, 0, 0, 0, 0.999999, -0.103627, -2.00357, -3.98644 )
+width = 0.474903
+height = 0.373761
+depth = 0.837208
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox7/CSGBox/CSGBox/CSGBox2/CSGBox2"]
+transform = Transform( 1, -1.62237e-09, -1.39698e-09, 6.19593e-12, 1, 4.65661e-10, -8.14907e-10, 0, 0.999999, -11.2868, 0.382529, 9.18699 )
+height = 0.857873
+depth = 0.720173
+
+[node name="OmniLight" type="OmniLight" parent="CSGBox7"]
+transform = Transform( 0.999999, 0.00122279, -0.000869244, -0.000650915, 0.531917, -0.000562917, 0.000867949, 0.00105934, 0.999999, -1.59049, -7.51739, 2.2093 )
+light_color = Color( 0.176471, 0.588235, 0.654902, 1 )
+light_energy = 1.254
+omni_range = 29.735
+omni_attenuation = 1.18921
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox7"]
+transform = Transform( 0.999999, 0.0012228, -0.000869245, -0.000650915, 0.531916, -0.000562919, 0.000867949, 0.00105934, 0.999999, 2.409, 0.281903, -6.28352 )
+height = 0.635204
+depth = 1.34883
+
+[node name="StaticBody" type="StaticBody" parent="CSGBox7"]
+transform = Transform( 32.5555, 0, 0, 0, 4.97708, 0, 0, 0, 31.4335, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGBox7/StaticBody"]
+shape = SubResource( 16 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CSGBox7/StaticBody"]
+
+[node name="StaticBody2" type="StaticBody" parent="CSGBox7"]
+transform = Transform( 29.8376, 0, 0, 0, 4.82124, 0, 0, 0, 28.3077, 0, -1.7832, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGBox7/StaticBody2"]
+shape = SubResource( 17 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CSGBox7/StaticBody2"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.204973, 0, 0, 0, 0.204973, 0, 0, 0, 0.204973, 0.000688791, 1.51248, -0.0375336 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( -0.0188601, 0.0490513, -0.0229181, 0.148161, 7.78924e-10, -0.0189418, 0.0442019, 0.0209293, 0.0537125, -3.19753, 2.89893, -5.73401 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox2"]
+transform = Transform( -4.37114e-08, -0.342385, -1.50619e-15, 2.92069, -4.37114e-08, 1.0064e-07, -2.21801e-07, 0, 1, -1.23503, 0, 0 )
+
+[node name="SpikeTrap" type="Area" parent="."]
+transform = Transform( 2.74352, 0, 0, 0, 4.3288, 0, 0, 0, 2.4784, 1.9888, 1.43435, -3.3006 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SpikeTrap"]
+transform = Transform( 1.00554, 0, 0, 0, 1.75744, 0, 0, 0, 1.02279, -0.000169635, -0.164016, 0.00124753 )
+shape = SubResource( 18 )
+
+[node name="MeshInstance" type="MeshInstance" parent="SpikeTrap"]
+transform = Transform( 0.220037, 0, 0, 0, 0.151119, 0, 0, 0, 0.223811, -0.000169635, -0.164016, 0.00124753 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("")

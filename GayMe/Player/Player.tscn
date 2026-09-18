@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GayMe/Player/CharacterController.gd" type="Script" id=2]
+[ext_resource path="res://GayMe/Player/Character.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.01804, 2.49959, 1.07566 )
+
+[sub_resource type="GDScript" id=2]
+
+[node name="Player" type="Spatial"]
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 1.00184, 0, 0, 0, 1.00184, 0, 0, 0, 1.00184, 0, 0, 0 )
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4731, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+mesh = ExtResource( 3 )
+skeleton = NodePath("../..")
+
+[node name="CameraPivot" type="Spatial" parent="KinematicBody"]
+transform = Transform( 0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, 0.0632544, 2.04636, 0.108019 )
+
+[node name="SpringArm" type="SpringArm" parent="KinematicBody/CameraPivot"]
+spring_length = 5.0
+
+[node name="Camera" type="Camera" parent="KinematicBody/CameraPivot/SpringArm"]
+transform = Transform( 0.998165, 0, 0, 0, 0.998165, 0, 0, 0, 0.998165, -1.05087, 2.68495, -0.45 )
+fov = 106.937
+script = SubResource( 2 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HPBar" type="ProgressBar" parent="UI"]
+margin_left = 20.0
+margin_top = 528.0
+margin_right = 248.0
+margin_bottom = 571.0
+value = 100.0
