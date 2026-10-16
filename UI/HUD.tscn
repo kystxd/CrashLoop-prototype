@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 334.0
+margin_bottom = 240.0
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 0.376
+anchor_bottom = 0.236
+margin_left = 306.0
+margin_top = 103.0
+margin_right = 291.392
+margin_bottom = 183.76
+text = "pause"
+align = 1
+valign = 1
