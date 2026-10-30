@@ -9,3 +9,4 @@ You can find the game's wiki here, and also find more information on my Discord 
 <h1>!!IMPORTANT MESSAGE!! </h1>
 <hr>
 Because the game is in prototype form, and I don't have perfect knowledge of GDScript, I'm temporarily writing a lot of it through AI, as this is my first project. I hope you'll understand
+Hey its me its verity
